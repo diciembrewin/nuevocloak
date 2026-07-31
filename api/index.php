@@ -14,12 +14,12 @@ function obtenerPaisPorIP() {
 $pais = obtenerPaisPorIP();
 $codigoPais = $pais['codigo'];
 
-// Cargar el HTML correspondiente
+// REGLA: SOLO ARGENTINA → index.html, el resto → global.html
 if ($codigoPais === 'AR') {
-    // Mostrar index.html (español)
+    // Mostrar index.html (español) SOLO para Argentina
     include __DIR__ . '/../index.html';
 } else {
-    // Mostrar global.html (inglés)
+    // Mostrar global.html (inglés) para el RESTO del mundo
     include __DIR__ . '/../global.html';
 }
 ?>
