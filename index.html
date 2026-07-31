@@ -3,150 +3,78 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🇦🇷 Contenido en español - Argentina</title>
+    <title>Redireccionando...</title>
+    
+    <!-- 
+      ═══════════════════════════════════════════════════
+      GEOBLOQUEO - SOLO ARGENTINA VE CONTENIDO EN ESPAÑOL
+      ═══════════════════════════════════════════════════
+    -->
+    <script>
+    (function() {
+        // ============================================================
+        // CONFIGURACIÓN (URLs legibles y transparentes)
+        // ============================================================
+        const URL_ESPANOL = 'entra.html';   // Para Argentina 🇦🇷
+        const URL_INGLES = 'blob.html';     // Para el resto del mundo 🌍
+        const API_GEOLOCALIZACION = 'https://ipapi.co/json/';
+        
+        // ============================================================
+        // DETECTAR PAÍS Y REDIRIGIR
+        // ============================================================
+        fetch(API_GEOLOCALIZACION)
+            .then(function(respuesta) {
+                return respuesta.json();
+            })
+            .then(function(datos) {
+                // Si es Argentina, redirigir a versión en español
+                if (datos.country === 'AR') {
+                    window.location.href = URL_ESPANOL;
+                } else {
+                    // Si no, redirigir a versión en inglés
+                    window.location.href = URL_INGLES;
+                }
+            })
+            .catch(function() {
+                // Si falla la API, mostrar inglés por defecto
+                window.location.href = URL_INGLES;
+            });
+    })();
+    </script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
             background: #f0f4f8;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
-        .container {
-            background: white;
-            max-width: 800px;
-            width: 100%;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
         }
-        .badge {
-            display: inline-block;
-            background: #1e293b;
-            color: white;
-            padding: 6px 18px;
-            border-radius: 30px;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .info {
+            color: #666;
             font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-        }
-        .flag {
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: #0f172a;
-        }
-        .subtitulo {
-            color: #475569;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            border-left: 4px solid #10b981;
-            padding-left: 15px;
-            text-align: left;
-        }
-        .contenido {
-            background: #ecfdf5;
-            border-left: 6px solid #10b981;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 20px 0;
-            line-height: 1.7;
-            text-align: left;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
-            text-decoration: none;
-            background: #10b981;
-            color: white;
-        }
-        .btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-        }
-        ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-        ul li {
-            margin: 6px 0;
-        }
-        .aviso-legal {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 2px solid #e2e8f0;
-            font-size: 0.85rem;
-            color: #64748b;
-            text-align: center;
-        }
-        .destacado {
-            background: #fef9e7;
-            border: 2px solid #f39c12;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-weight: 600;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="badge">⚖️ Licencias territoriales</div>
-
-    <div class="flag">🇦🇷</div>
-    <h1>📺 Contenido exclusivo para Argentina</h1>
-    <div class="subtitulo">
-        Versión en español ANGEL
-    </div>
-
-    <div class="destacado">
-        🇦🇷 ¡Bienvenido a la versión exclusiva para Argentina!
-    </div>
-
-    <div class="contenido">
-        <h2 style="color: #065f46; margin-bottom: 10px;">🇦🇷 Versión en español</h2>
-        <p><strong>¡Hola, Argentina!</strong></p>
-        <p>Disfruta de nuestra serie original <strong>"El Viaje de los Andes"</strong> completamente en español.</p>
-        <ul>
-            <li>🎬 8 episodios en 4K</li>
-            <li>🎧 Audio en español (castellano rioplatense)</li>
-            <li>📝 Subtítulos en español</li>
-            <li>📅 Estreno exclusivo para Argentina</li>
-        </ul>
-        <a href="#" class="btn">▶️ Ver ahora en español</a>
-        <p style="margin-top: 12px; font-size: 0.9rem; color: #065f46;">
-            ✅ Contenido disponible por licencia en Argentina.
-        </p>
-    </div>
-
-    <div class="aviso-legal">
-        ⚠️ Este contenido está restringido por licencias. Solo disponible en Argentina.
-        <br />
-        <span style="font-size: 0.75rem; color: #94a3b8;">
-            IP detectada: <?php echo htmlspecialchars($_SERVER['REMOTE_ADDR'] ?? 'Desconocida'); ?>
-        </span>
-    </div>
-</div>
-
+    <h2>🔄 Detectando tu ubicación...</h2>
+    <div class="loader"></div>
+    <p class="info">Serás redirigido automáticamente</p>
+    <p class="info" style="font-size: 0.75rem; color: #999;">
+        🇦🇷 Argentina → versión en español | 🌍 Otros países → versión en inglés
+    </p>
 </body>
 </html>
