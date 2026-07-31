@@ -1,5 +1,6 @@
 <?php
 // api/index.php - Redirige a index.html o global.html según el país
+// Versión optimizada para PHP 8.5
 
 // ============================================================
 // 1. FUNCIÓN PARA OBTENER PAÍS POR IP
@@ -14,7 +15,7 @@ function obtenerPaisPorIP() {
     }
     
     // Obtener IP real del usuario
-    $ip = $_SERVER['REMOTE_ADDR'];
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
     
     // Si está detrás de proxy (Cloudflare, etc.)
     if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -49,7 +50,7 @@ function obtenerPaisPorIP() {
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
         $respuesta = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        // ELIMINADO: curl_close($ch); - Ya no es necesario en PHP 8.5
         
         if ($httpCode === 200 && $respuesta) {
             $datos = json_decode($respuesta, true);
@@ -73,7 +74,7 @@ function obtenerPaisPorIP() {
         curl_setopt($ch, CURLOPT_TIMEOUT, 5);
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
         $respuesta = curl_exec($ch);
-        curl_close($ch);
+        // ELIMINADO: curl_close($ch); - Ya no es necesario en PHP 8.5
         
         if ($respuesta) {
             $datos = json_decode($respuesta, true);
@@ -101,8 +102,15 @@ function obtenerPaisPorIP() {
 // ============================================================
 // 2. REDIRIGIR SEGÚN PAÍS
 // ============================================================
+
+// Suprimir cualquier output antes de la redirección
+ob_start(); // Iniciar buffer de salida
+
 $pais = obtenerPaisPorIP();
 $codigoPais = $pais['codigo'];
+
+// Limpiar el buffer antes de enviar headers
+ob_end_clean();
 
 // REGLA: SOLO ARGENTINA → index.html, el resto → global.html
 if ($codigoPais === 'AR') {
