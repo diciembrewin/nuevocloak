@@ -3,108 +3,710 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🌍 Global - English version</title>
+    <title>Wood Education Portal - Informative Resource</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="100% educational portal about wood: types, properties, uses, sustainability, and care. No sales, no commercial activities." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://yourdomain.com" />
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Wood Education Portal",
+            "description": "100% informational site about wood, its types, properties, and sustainability. No sales or advertising.",
+            "url": "https://yourdomain.com",
+            "publisher": {
+                "@type": "Organization",
+                "name": "WoodEducate",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "info@woodeducate.com",
+                    "contactType": "customer service"
+                }
+            }
+        }
+    </script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f5f0;
+            color: #2c3e2f;
         }
+
         .container {
-            background: white;
-            max-width: 700px;
-            width: 100%;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            background-color: #3b5e3b;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #4f7a4f;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2a4a2a;
+            margin-bottom: 30px;
+            border-left: 6px solid #8b6b4d;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #3b5e3b;
+            margin: 20px 0 10px;
+        }
+
+        /* --- HERO (Inicio) --- */
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
             text-align: center;
+            padding: 120px 20px;
+            border-bottom: none;
         }
-        .badge {
-            display: inline-block;
-            background: #1e293b;
-            color: white;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
+
+        #home h1 {
+            font-size: 3.2rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
-        .flag { font-size: 4rem; margin-bottom: 10px; }
-        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #0f172a; }
-        .pais {
-            background: #f1f5f9;
-            padding: 8px 20px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+
+        #home p {
+            font-size: 1.3rem;
+            max-width: 720px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
         }
-        .contenido {
-            background: #eff6ff;
-            border-left: 6px solid #3b82f6;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 20px 0;
-            line-height: 1.7;
-            text-align: left;
-        }
+
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            background-color: #8b6b4d;
+            color: #fff;
+            padding: 15px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
             border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
             cursor: pointer;
-            background: #3b82f6;
-            color: white;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .btn:hover { 
-            transform: scale(1.03); 
-            box-shadow: 0 4px 12px rgba(59,130,246,0.4); 
+
+        .btn:hover {
+            background-color: #6f553d;
+            transform: scale(1.03);
         }
-        ul { padding-left: 20px; margin: 10px 0; }
-        ul li { margin: 6px 0; }
-        .aviso-legal {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 2px solid #e2e8f0;
-            font-size: 0.85rem;
-            color: #64748b;
+
+        /* --- WOOD TYPES GRID --- */
+        .wood-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
         }
-        .aviso-legal a {
-            color: #64748b;
+
+        .wood-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            border-top: 5px solid #8b6b4d;
+            transition: transform 0.2s;
+        }
+
+        .wood-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .wood-card h4 {
+            font-size: 1.5rem;
+            color: #2a4a2a;
+            margin-bottom: 10px;
+        }
+
+        .wood-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .wood-card ul li {
+            padding: 4px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+        }
+
+        .wood-card ul li strong {
+            color: #5a3f2b;
+        }
+
+        /* --- PROPERTIES GRID --- */
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px;
+            background: #ecf3ec;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .props-grid span {
+            background: #fff;
+            padding: 12px 18px;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- USES GRID --- */
+        .uses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 14px;
+        }
+
+        .uses-grid div {
+            background: #3b5e3b;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* --- TIPS & SUSTAINABILITY --- */
+        .tips-list,
+        .sust-list {
+            background: #f0f0eb;
+            padding: 25px 30px;
+            border-radius: 12px;
+            list-style: square;
+            margin-left: 20px;
+        }
+
+        .tips-list li,
+        .sust-list li {
+            margin: 10px 0;
+        }
+
+        /* --- CURIOSITIES & FAQ --- */
+        .curios-grid,
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .curios-item,
+        .faq-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .curios-item h4,
+        .faq-item h4 {
+            color: #5a3f2b;
+        }
+
+        /* --- GLOSSARY --- */
+        .gloss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .gloss-grid div {
+            background: #e8e2d9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* --- CONTACT & LEGAL --- */
+        #contact p,
+        #legal p {
+            background: #f0f0eb;
+            padding: 14px 20px;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+
+        .legal-notice {
+            background: #e0d6c8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1e2f1e;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #b8d9b8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .menu {
+                justify-content: center;
+            }
+            #home h1 {
+                font-size: 2.2rem;
+            }
+            #home p {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .wood-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="badge">⚖️ Territorial licenses</div>
-    <div class="flag">🌎</div>
-    <h1>📺 Global content</h1>
-    <div class="pais">📍 Country detected: <strong>International</strong></div>
-    <div class="contenido">
-        <h2 style="color: #1e3a8a; margin-bottom: 10px;">🇬🇧 English version</h2>
-        <p><strong>Welcome!</strong></p>
-        <p>Enjoy our international series <strong>"The Andes Journey"</strong> in English.</p>
-        <ul>
-            <li>🎬 8 episodes in 4K</li>
-            <li>🎧 English audio (original version)</li>
-            <li>📝 English subtitles</li>
-            <li>📅 Available worldwide</li>
-        </ul>
-        <button class="btn">▶️ Watch now in English</button>
-        <p style="margin-top: 12px; font-size: 0.9rem; color: #1e3a8a;">✅ Content licensed for your region.</p>
-    </div>
-    <div class="aviso-legal">
-        ⚠️ This content is restricted by licensing. Only available in Argentina in Spanish.
-    </div>
-</div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🌳 WoodEducate</div>
+                <div class="menu">
+                    <a href="#home">Home</a>
+                    <a href="#what-is">What Is Wood?</a>
+                    <a href="#types">Types</a>
+                    <a href="#properties">Properties</a>
+                    <a href="#uses">Uses</a>
+                    <a href="#care">Care</a>
+                    <a href="#sustainability">Sustainability</a>
+                    <a href="#curiosities">Curiosities</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#glossary">Glossary</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HOME ===== -->
+        <section id="home">
+            <div class="container">
+                <h1>Educational Wood Portal</h1>
+                <p>
+                    Welcome to your 100% informational resource about wood. Learn about its
+                    types, properties, uses, and importance for a sustainable future.
+                    <strong>This site is for educational purposes only.</strong>
+                </p>
+                <a href="#types" class="btn">🌲 Explore Content</a>
+            </div>
+        </section>
+
+        <!-- ===== WHAT IS WOOD? ===== -->
+        <section id="what-is">
+            <div class="container">
+                <h2>🌿 What Is Wood?</h2>
+                <p style="font-size:1.15rem; max-width:800px;">
+                    Wood is a hard, fibrous, organic material that forms the trunk of trees.
+                    It develops through concentric layers called growth rings.
+                </p>
+                <ul style="margin-top:20px; list-style:disc; padding-left:30px;">
+                    <li><strong>How it forms:</strong> Through cell division in the cambium layer, producing xylem (heartwood and sapwood).</li>
+                    <li><strong>Where it comes from:</strong> Natural forests and responsibly managed plantations.</li>
+                    <li><strong>Why it matters:</strong> Renewable, stores CO₂, and is essential in construction, furniture, art, and more.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== TYPES OF WOOD ===== -->
+        <section id="types">
+            <div class="container">
+                <h2>🪵 Types of Wood</h2>
+                <div class="wood-grid">
+                    <!-- Oak -->
+                    <div class="wood-card">
+                        <h4>Oak</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Europe, North America</li>
+                            <li><strong>Color:</strong> Honey to brown</li>
+                            <li><strong>Hardness:</strong> High</li>
+                            <li><strong>Texture:</strong> Coarse, porous</li>
+                            <li><strong>Uses:</strong> Furniture, barrels, flooring</li>
+                            <li><strong>Fun fact:</strong> Can live over 1,000 years.</li>
+                        </ul>
+                    </div>
+                    <!-- Pine -->
+                    <div class="wood-card">
+                        <h4>Pine</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Northern Hemisphere</li>
+                            <li><strong>Color:</strong> Light yellow</li>
+                            <li><strong>Hardness:</strong> Medium-low</li>
+                            <li><strong>Texture:</strong> Fine, straight</li>
+                            <li><strong>Uses:</strong> Construction, budget furniture</li>
+                            <li><strong>Fun fact:</strong> Most widely used wood worldwide.</li>
+                        </ul>
+                    </div>
+                    <!-- Cedar -->
+                    <div class="wood-card">
+                        <h4>Cedar</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Americas, Mediterranean</li>
+                            <li><strong>Color:</strong> Reddish brown</li>
+                            <li><strong>Hardness:</strong> Medium</li>
+                            <li><strong>Texture:</strong> Fine, aromatic</li>
+                            <li><strong>Uses:</strong> Cabinetry, cladding</li>
+                            <li><strong>Fun fact:</strong> Its scent repels moths.</li>
+                        </ul>
+                    </div>
+                    <!-- Walnut -->
+                    <div class="wood-card">
+                        <h4>Walnut</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Europe, Americas</li>
+                            <li><strong>Color:</strong> Chocolate brown</li>
+                            <li><strong>Hardness:</strong> High</li>
+                            <li><strong>Texture:</strong> Wavy, attractive</li>
+                            <li><strong>Uses:</strong> Luxury furniture, gunstocks</li>
+                            <li><strong>Fun fact:</strong> Highly prized in the 18th century.</li>
+                        </ul>
+                    </div>
+                    <!-- Mahogany -->
+                    <div class="wood-card">
+                        <h4>Mahogany</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Central & South America</li>
+                            <li><strong>Color:</strong> Deep red</li>
+                            <li><strong>Hardness:</strong> Medium</li>
+                            <li><strong>Texture:</strong> Fine, uniform</li>
+                            <li><strong>Uses:</strong> Fine furniture, instruments</li>
+                            <li><strong>Fun fact:</strong> National wood of Belize.</li>
+                        </ul>
+                    </div>
+                    <!-- Teak -->
+                    <div class="wood-card">
+                        <h4>Teak</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Southeast Asia</li>
+                            <li><strong>Color:</strong> Golden to brown</li>
+                            <li><strong>Hardness:</strong> High</li>
+                            <li><strong>Texture:</strong> Coarse, oily</li>
+                            <li><strong>Uses:</strong> Outdoor furniture, boats</li>
+                            <li><strong>Fun fact:</strong> Resists water and termites.</li>
+                        </ul>
+                    </div>
+                    <!-- Fir -->
+                    <div class="wood-card">
+                        <h4>Fir</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Cold northern regions</li>
+                            <li><strong>Color:</strong> White-yellowish</li>
+                            <li><strong>Hardness:</strong> Low</li>
+                            <li><strong>Texture:</strong> Fine, straight</li>
+                            <li><strong>Uses:</strong> Paper, light structures</li>
+                            <li><strong>Fun fact:</strong> The classic Christmas tree.</li>
+                        </ul>
+                    </div>
+                    <!-- Eucalyptus -->
+                    <div class="wood-card">
+                        <h4>Eucalyptus</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Australia</li>
+                            <li><strong>Color:</strong> Pinkish brown</li>
+                            <li><strong>Hardness:</strong> High</li>
+                            <li><strong>Texture:</strong> Medium</li>
+                            <li><strong>Uses:</strong> Posts, flooring, pulp</li>
+                            <li><strong>Fun fact:</strong> Grows very fast (up to 10 m/year).</li>
+                        </ul>
+                    </div>
+                    <!-- Bamboo -->
+                    <div class="wood-card">
+                        <h4>Bamboo</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Asia, Americas</li>
+                            <li><strong>Color:</strong> Green to brown</li>
+                            <li><strong>Hardness:</strong> High (at nodes)</li>
+                            <li><strong>Texture:</strong> Smooth, cylindrical</li>
+                            <li><strong>Uses:</strong> Furniture, scaffolding, textiles</li>
+                            <li><strong>Fun fact:</strong> Not a tree — it's a grass.</li>
+                        </ul>
+                    </div>
+                    <!-- Ash -->
+                    <div class="wood-card">
+                        <h4>Ash</h4>
+                        <ul>
+                            <li><strong>Origin:</strong> Europe, North America</li>
+                            <li><strong>Color:</strong> Creamy white</li>
+                            <li><strong>Hardness:</strong> High</li>
+                            <li><strong>Texture:</strong> Coarse, straight</li>
+                            <li><strong>Uses:</strong> Tool handles, furniture</li>
+                            <li><strong>Fun fact:</strong> Very elastic — great for sports.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROPERTIES ===== -->
+        <section id="properties">
+            <div class="container">
+                <h2>📐 Wood Properties</h2>
+                <div class="props-grid">
+                    <span>🌲 Density</span>
+                    <span>💧 Moisture</span>
+                    <span>🔨 Strength</span>
+                    <span>🌀 Elasticity</span>
+                    <span>⏳ Durability</span>
+                    <span>🎨 Natural Color</span>
+                    <span>〰️ Grain</span>
+                    <span>🛠️ Applications</span>
+                </div>
+                <p style="margin-top:20px; background:#ecf3ec; padding:20px; border-radius:12px;">
+                    Each species has a unique combination of these properties, determining its best use.
+                    For example, dense woods like walnut are ideal for furniture, while lighter ones like fir are used in framing.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== USES ===== -->
+        <section id="uses">
+            <div class="container">
+                <h2>🏗️ Where Is Wood Used?</h2>
+                <div class="uses-grid">
+                    <div>Construction</div>
+                    <div>Housing</div>
+                    <div>Furniture</div>
+                    <div>Doors</div>
+                    <div>Flooring</div>
+                    <div>Roofing</div>
+                    <div>Crafts</div>
+                    <div>Musical Instruments</div>
+                    <div>Decoration</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CARE ===== -->
+        <section id="care">
+            <div class="container">
+                <h2>🧴 Wood Care</h2>
+                <ul class="tips-list">
+                    <li><strong>Avoid excess moisture:</strong> Wood swells and warps.</li>
+                    <li><strong>Clean properly:</strong> Use a dry or slightly damp cloth — never soak.</li>
+                    <li><strong>Sun protection:</strong> UV rays fade and crack the surface.</li>
+                    <li><strong>Preventive maintenance:</strong> Apply natural oil or wax periodically.</li>
+                    <li><strong>Recommended products:</strong> Always choose natural waxes and oils (no specific brands).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SUSTAINABILITY ===== -->
+        <section id="sustainability">
+            <div class="container">
+                <h2>♻️ Sustainability</h2>
+                <ul class="sust-list">
+                    <li><strong>Reforestation:</strong> Plant more trees than are harvested.</li>
+                    <li><strong>Certified forests:</strong> Look for FSC or PEFC labels.</li>
+                    <li><strong>Responsible harvesting:</strong> Use selective cutting techniques.</li>
+                    <li><strong>Environmental protection:</strong> Wood stores CO₂ throughout its life.</li>
+                    <li><strong>Circular economy:</strong> Reuse and recycle wood at the end of its life.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== CURIOSITIES ===== -->
+        <section id="curiosities">
+            <div class="container">
+                <h2>✨ Curiosities</h2>
+                <div class="curios-grid">
+                    <div class="curios-item">
+                        <h4>🌲 Tallest Tree</h4>
+                        <p>Hyperion, a coast redwood, measures 115.9 m — taller than a 30-story building.</p>
+                    </div>
+                    <div class="curios-item">
+                        <h4>🏋️ Heaviest Wood</h4>
+                        <p>Lignum vitae (palo santo) is so dense it sinks in water.</p>
+                    </div>
+                    <div class="curios-item">
+                        <h4>🕊️ Lightest Wood</h4>
+                        <p>Ecuadorian balsa has a density of just 0.12 g/cm³.</p>
+                    </div>
+                    <div class="curios-item">
+                        <h4>⚠️ Protected Species</h4>
+                        <p>Mahogany and ebony are listed under CITES to prevent extinction.</p>
+                    </div>
+                    <div class="curios-item">
+                        <h4>⏳ Ancient Trees</h4>
+                        <p>Bristlecone pines can live over 5,000 years.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section id="faq">
+            <div class="container">
+                <h2>❓ Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>Hardwood vs. Softwood?</h4>
+                        <p>It's botanical: conifers are softwoods, broadleaf trees are hardwoods — not about physical hardness.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How long does wood last?</h4>
+                        <p>Depends on species and care. Decades indoors, or centuries in ancient structures.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Best wood for humidity?</h4>
+                        <p>Teak, ipe, and cumaru excel in outdoor, humid environments.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How to identify a species?</h4>
+                        <p>By color, grain, odor, weight, and microscopically in labs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GLOSSARY ===== -->
+        <section id="glossary">
+            <div class="container">
+                <h2>📖 Glossary</h2>
+                <div class="gloss-grid">
+                    <div>Sapwood (living part)</div>
+                    <div>Heartwood (hard core)</div>
+                    <div>Grain (fiber pattern)</div>
+                    <div>Knot (included branch)</div>
+                    <div>Sawing (cutting)</div>
+                    <div>Drying (moisture reduction)</div>
+                    <div>Planing (smoothing)</div>
+                    <div>Laminating (thin layers)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact">
+            <div class="container">
+                <h2>📬 Contact</h2>
+                <p><strong>Email:</strong> info@woodeducate.com</p>
+                <p><strong>Form:</strong> Coming soon — for now, email us directly.</p>
+                <p><strong>Address:</strong> Forest Education Center, Madrid (office only).</p>
+                <p><strong>Hours:</strong> Monday–Friday, 9:00 AM – 6:00 PM.</p>
+                <div class="legal-notice">
+                    <strong>⚠️ Notice:</strong> This site is 100% informational. We do not sell, commercialize,
+                    or provide professional consulting. All content is for educational purposes.
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LEGAL / POLICIES ===== -->
+        <section id="legal">
+            <div class="container">
+                <h2>⚖️ Legal Notice & Policies</h2>
+                <p><strong>Privacy Policy:</strong> We do not collect personal data without consent. We use cookies only to improve navigation.</p>
+                <p><strong>Terms & Conditions:</strong> Using this site implies acceptance that content is purely advisory.</p>
+                <p><strong>Cookie Policy:</strong> This site uses technical cookies. You can disable them in your browser.</p>
+                <p><strong>About Us:</strong> We are a team of educators passionate about wood and sustainability.</p>
+                <p><strong>Site Owner:</strong> WoodEducate © 2026</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom:10px;">🌱 WoodEducate — 100% Informational & Educational Portal</p>
+            <p>
+                <a href="#home">Home</a> |
+                <a href="#contact">Contact</a> |
+                <a href="#legal">Legal Notice</a>
+            </p>
+            <p style="margin-top:15px; font-size:0.9rem; color:#999;">
+                This site does not sell or intermediate any commercial transactions.
+                All content is original and for educational purposes only.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
