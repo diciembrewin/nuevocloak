@@ -38,8 +38,8 @@
         body {
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f8f5f0;
-            color: #2c3e2f;
+            background-color: #ffffff; /* BLANCO */
+            color: #cc0000; /* ROJO */
         }
 
         .container {
@@ -50,13 +50,14 @@
 
         /* --- HEADER / NAV --- */
         header {
-            background-color: #3b5e3b;
-            color: #fff;
+            background-color: #ffffff; /* BLANCO */
+            color: #cc0000; /* ROJO */
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(200, 0, 0, 0.15);
+            border-bottom: 3px solid #cc0000;
         }
 
         nav {
@@ -70,6 +71,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
+            color: #cc0000;
         }
 
         .menu {
@@ -79,22 +81,25 @@
         }
 
         .menu a {
-            color: #fff;
+            color: #cc0000;
             text-decoration: none;
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 0.9rem;
-            transition: background 0.3s;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
         }
 
         .menu a:hover {
-            background-color: #4f7a4f;
+            background-color: #cc0000;
+            color: #ffffff;
         }
 
         /* --- SECTIONS --- */
         section {
             padding: 60px 0;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 2px solid #ffcccc;
+            background-color: #ffffff;
         }
 
         section:last-of-type {
@@ -103,58 +108,69 @@
 
         h2 {
             font-size: 2rem;
-            color: #2a4a2a;
+            color: #cc0000;
             margin-bottom: 30px;
-            border-left: 6px solid #8b6b4d;
+            border-left: 6px solid #cc0000;
             padding-left: 15px;
         }
 
         h3 {
-            color: #3b5e3b;
+            color: #cc0000;
             margin: 20px 0 10px;
+        }
+
+        h4 {
+            color: #cc0000;
+        }
+
+        p {
+            color: #cc0000;
+        }
+
+        li {
+            color: #cc0000;
         }
 
         /* --- HERO (Inicio) --- */
         #home {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
+            background: #ffffff;
+            color: #cc0000;
             text-align: center;
             padding: 120px 20px;
-            border-bottom: none;
+            border-bottom: 3px solid #cc0000;
         }
 
         #home h1 {
             font-size: 3.2rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            color: #cc0000;
+            text-shadow: 1px 1px 4px rgba(200, 0, 0, 0.15);
         }
 
         #home p {
             font-size: 1.3rem;
             max-width: 720px;
             margin: 0 auto 30px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            color: #cc0000;
         }
 
         .btn {
             display: inline-block;
-            background-color: #8b6b4d;
-            color: #fff;
+            background-color: #cc0000;
+            color: #ffffff;
             padding: 15px 45px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
             font-size: 1.1rem;
             transition: background 0.3s, transform 0.2s;
-            border: none;
+            border: 2px solid #cc0000;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #6f553d;
+            background-color: #ffffff;
+            color: #cc0000;
             transform: scale(1.03);
         }
 
@@ -167,21 +183,23 @@
         }
 
         .wood-card {
-            background: #fff;
+            background: #ffffff;
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-            border-top: 5px solid #8b6b4d;
+            box-shadow: 0 4px 12px rgba(200, 0, 0, 0.1);
+            border-top: 5px solid #cc0000;
+            border: 2px solid #cc0000;
             transition: transform 0.2s;
         }
 
         .wood-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(200, 0, 0, 0.2);
         }
 
         .wood-card h4 {
             font-size: 1.5rem;
-            color: #2a4a2a;
+            color: #cc0000;
             margin-bottom: 10px;
         }
 
@@ -192,12 +210,13 @@
 
         .wood-card ul li {
             padding: 4px 0;
-            border-bottom: 1px dashed #eee;
+            border-bottom: 1px dashed #ffcccc;
             font-size: 0.95rem;
+            color: #cc0000;
         }
 
         .wood-card ul li strong {
-            color: #5a3f2b;
+            color: #990000;
         }
 
         /* --- PROPERTIES GRID --- */
@@ -205,18 +224,21 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 18px;
-            background: #ecf3ec;
+            background: #fff5f5;
             padding: 30px;
             border-radius: 12px;
+            border: 2px solid #cc0000;
         }
 
         .props-grid span {
-            background: #fff;
+            background: #ffffff;
             padding: 12px 18px;
             border-radius: 30px;
             text-align: center;
             font-weight: 600;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 6px rgba(200, 0, 0, 0.08);
+            border: 1px solid #cc0000;
+            color: #cc0000;
         }
 
         /* --- USES GRID --- */
@@ -227,27 +249,41 @@
         }
 
         .uses-grid div {
-            background: #3b5e3b;
-            color: #fff;
+            background: #cc0000;
+            color: #ffffff;
             padding: 12px;
             text-align: center;
             border-radius: 8px;
             font-weight: 600;
+            border: 2px solid #cc0000;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .uses-grid div:hover {
+            background: #ffffff;
+            color: #cc0000;
         }
 
         /* --- TIPS & SUSTAINABILITY --- */
         .tips-list,
         .sust-list {
-            background: #f0f0eb;
+            background: #fff5f5;
             padding: 25px 30px;
             border-radius: 12px;
             list-style: square;
             margin-left: 20px;
+            border: 2px solid #cc0000;
         }
 
         .tips-list li,
         .sust-list li {
             margin: 10px 0;
+            color: #cc0000;
+        }
+
+        .tips-list li strong,
+        .sust-list li strong {
+            color: #990000;
         }
 
         /* --- CURIOSITIES & FAQ --- */
@@ -260,15 +296,21 @@
 
         .curios-item,
         .faq-item {
-            background: #fff;
+            background: #ffffff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 8px rgba(200, 0, 0, 0.08);
+            border: 2px solid #cc0000;
         }
 
         .curios-item h4,
         .faq-item h4 {
-            color: #5a3f2b;
+            color: #cc0000;
+        }
+
+        .curios-item p,
+        .faq-item p {
+            color: #cc0000;
         }
 
         /* --- GLOSSARY --- */
@@ -279,47 +321,64 @@
         }
 
         .gloss-grid div {
-            background: #e8e2d9;
+            background: #fff5f5;
             padding: 12px 16px;
             border-radius: 8px;
             text-align: center;
             font-weight: 500;
+            border: 2px solid #cc0000;
+            color: #cc0000;
         }
 
         /* --- CONTACT & LEGAL --- */
         #contact p,
         #legal p {
-            background: #f0f0eb;
+            background: #fff5f5;
             padding: 14px 20px;
             border-radius: 8px;
             margin: 8px 0;
+            border-left: 4px solid #cc0000;
+            color: #cc0000;
         }
 
         .legal-notice {
-            background: #e0d6c8;
+            background: #fff5f5;
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
             font-weight: 500;
+            border: 2px solid #cc0000;
+            color: #cc0000;
+        }
+
+        .legal-notice strong {
+            color: #990000;
         }
 
         /* --- FOOTER --- */
         footer {
-            background: #1e2f1e;
-            color: #ccc;
+            background: #ffffff;
+            color: #cc0000;
             text-align: center;
             padding: 30px 0;
             margin-top: 20px;
+            border-top: 3px solid #cc0000;
         }
 
         footer a {
-            color: #b8d9b8;
+            color: #cc0000;
             text-decoration: none;
             margin: 0 10px;
+            font-weight: 500;
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: #990000;
+        }
+
+        footer p {
+            color: #cc0000;
         }
 
         /* --- RESPONSIVE --- */
@@ -387,14 +446,14 @@
         <section id="what-is">
             <div class="container">
                 <h2>🌿 What Is Wood?</h2>
-                <p style="font-size:1.15rem; max-width:800px;">
+                <p style="font-size:1.15rem; max-width:800px; color:#cc0000;">
                     Wood is a hard, fibrous, organic material that forms the trunk of trees.
                     It develops through concentric layers called growth rings.
                 </p>
-                <ul style="margin-top:20px; list-style:disc; padding-left:30px;">
-                    <li><strong>How it forms:</strong> Through cell division in the cambium layer, producing xylem (heartwood and sapwood).</li>
-                    <li><strong>Where it comes from:</strong> Natural forests and responsibly managed plantations.</li>
-                    <li><strong>Why it matters:</strong> Renewable, stores CO₂, and is essential in construction, furniture, art, and more.</li>
+                <ul style="margin-top:20px; list-style:disc; padding-left:30px; color:#cc0000;">
+                    <li><strong style="color:#990000;">How it forms:</strong> Through cell division in the cambium layer, producing xylem (heartwood and sapwood).</li>
+                    <li><strong style="color:#990000;">Where it comes from:</strong> Natural forests and responsibly managed plantations.</li>
+                    <li><strong style="color:#990000;">Why it matters:</strong> Renewable, stores CO₂, and is essential in construction, furniture, art, and more.</li>
                 </ul>
             </div>
         </section>
@@ -542,7 +601,7 @@
                     <span>〰️ Grain</span>
                     <span>🛠️ Applications</span>
                 </div>
-                <p style="margin-top:20px; background:#ecf3ec; padding:20px; border-radius:12px;">
+                <p style="margin-top:20px; background:#fff5f5; padding:20px; border-radius:12px; border:2px solid #cc0000; color:#cc0000;">
                     Each species has a unique combination of these properties, determining its best use.
                     For example, dense woods like walnut are ideal for furniture, while lighter ones like fir are used in framing.
                 </p>
@@ -702,7 +761,7 @@
                 <a href="#contact">Contact</a> |
                 <a href="#legal">Legal Notice</a>
             </p>
-            <p style="margin-top:15px; font-size:0.9rem; color:#999;">
+            <p style="margin-top:15px; font-size:0.9rem;">
                 This site does not sell or intermediate any commercial transactions.
                 All content is original and for educational purposes only.
             </p>
