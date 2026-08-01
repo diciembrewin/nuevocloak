@@ -1,110 +1,514 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🇦🇷 Argentina - Contenido en español</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Educativo de la Madera</title>
+    <!-- Estilos CSS para un diseño limpio y responsivo -->
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f5f0;
+            color: #2c3e2f;
         }
+
         .container {
-            background: white;
-            max-width: 700px;
-            width: 100%;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .badge {
-            display: inline-block;
-            background: #1e293b;
+
+        /* --- Navegación --- */
+        header {
+            background-color: #3b5e3b;
             color: white;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        .flag { font-size: 4rem; margin-bottom: 10px; }
-        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #0f172a; }
-        .pais {
-            background: #f1f5f9;
-            padding: 8px 20px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 20px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
             font-size: 0.95rem;
         }
-        .contenido {
-            background: #ecfdf5;
-            border-left: 6px solid #10b981;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 20px 0;
-            line-height: 1.7;
-            text-align: left;
+
+        .menu a:hover {
+            background-color: #4f7a4f;
         }
+
+        /* --- Secciones Generales --- */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2a4a2a;
+            margin-bottom: 30px;
+            border-left: 6px solid #8b6b4d;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #3b5e3b;
+            margin: 20px 0 10px 0;
+        }
+
+        /* --- Inicio (Hero) --- */
+        #inicio {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: none;
+        }
+
+        #inicio h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        #inicio p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            background: #10b981;
+            background-color: #8b6b4d;
             color: white;
-            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        .btn:hover { 
-            transform: scale(1.03); 
-            box-shadow: 0 4px 12px rgba(16,185,129,0.4); 
+
+        .btn:hover {
+            background-color: #6f553d;
+            transform: scale(1.03);
         }
-        ul { padding-left: 20px; margin: 10px 0; }
-        ul li { margin: 6px 0; }
-        .aviso-legal {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 2px solid #e2e8f0;
-            font-size: 0.85rem;
-            color: #64748b;
+
+        /* --- Grid para Tipos de Madera --- */
+        .grid-maderas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
         }
-        .aviso-legal a {
-            color: #64748b;
+
+        .ficha-madera {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 5px solid #8b6b4d;
+            transition: transform 0.2s;
+        }
+
+        .ficha-madera:hover {
+            transform: translateY(-5px);
+        }
+
+        .ficha-madera h4 {
+            font-size: 1.5rem;
+            color: #2a4a2a;
+            margin-bottom: 10px;
+        }
+
+        .ficha-madera ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ficha-madera ul li {
+            padding: 4px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.95rem;
+        }
+
+        .ficha-madera ul li strong {
+            color: #5a3f2b;
+        }
+
+        /* --- Grid para Propiedades --- */
+        .grid-propiedades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #ecf3ec;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .grid-propiedades span {
+            background: white;
+            padding: 12px 18px;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        /* --- Grid para Usos --- */
+        .grid-usos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-usos div {
+            background: #3b5e3b;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        /* --- Consejos y Sostenibilidad --- */
+        .consejos-lista, .sostenibilidad-lista {
+            background: #f0f0eb;
+            padding: 25px 30px;
+            border-radius: 12px;
+            list-style: square;
+            margin-left: 20px;
+        }
+
+        .consejos-lista li, .sostenibilidad-lista li {
+            margin: 10px 0;
+        }
+
+        /* --- Curiosidades y FAQ --- */
+        .curiosidades-grid, .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .curiosidad-item, .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .curiosidad-item h4, .faq-item h4 {
+            color: #5a3f2b;
+        }
+
+        /* --- Glosario --- */
+        .glosario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .glosario-grid div {
+            background: #e8e2d9;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* --- Contacto y Legal --- */
+        #contacto p, #legal p {
+            background: #f0f0eb;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #1e2f1e;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #b8d9b8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .menu {
+                justify-content: center;
+            }
+            #inicio h1 {
+                font-size: 2.2rem;
+            }
+            #inicio p {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .grid-maderas {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="badge">⚖️ Licencias territoriales</div>
-    <div class="flag">🇦🇷</div>
-    <h1>📺 Contenido exclusivo para Argentina</h1>
-    <div class="pais">📍 País detectado: <strong>Argentina (AR)</strong></div>
-    <div class="contenido">
-        <h2 style="color: #065f46; margin-bottom: 10px;">🇦🇷 Versión en español</h2>
-        <p><strong>¡Hola, Argentina!</strong></p>
-        <p>Disfruta de nuestra serie original <strong>"El Viaje de los Andes"</strong> completamente en español.</p>
-        <ul>
-            <li>🎬 8 episodios en 4K</li>
-            <li>🎧 Audio en español (castellano rioplatense)</li>
-            <li>📝 Subtítulos en español</li>
-            <li>📅 Estreno exclusivo para Argentina</li>
-        </ul>
-        <button class="btn">▶️ Ver ahora en español</button>
-        <p style="margin-top: 12px; font-size: 0.9rem; color: #065f46;">✅ Contenido disponible por licencia en Argentina.</p>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">🌳 MaderaEduca</div>
+            <div class="menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#que-es">¿Qué es?</a>
+                <a href="#tipos">Tipos</a>
+                <a href="#propiedades">Propiedades</a>
+                <a href="#usos">Usos</a>
+                <a href="#cuidado">Cuidado</a>
+                <a href="#sostenibilidad">Sostenibilidad</a>
+                <a href="#curiosidades">Curiosidades</a>
+                <a href="#faq">FAQ</a>
+                <a href="#glosario">Glosario</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
     </div>
-    <div class="aviso-legal">
-        ⚠️ Este contenido está restringido por licencias. Solo disponible en Argentina.
+</header>
+
+<main>
+    <!-- ===== SECCIÓN INICIO ===== -->
+    <section id="inicio">
+        <div class="container">
+            <h1>Portal Educativo de la Madera</h1>
+            <p>Bienvenido a tu recurso 100% informativo sobre la madera. Aprende sobre sus tipos, propiedades, usos y su importancia para un futuro sostenible. Este sitio tiene fines exclusivamente educativos.</p>
+            <a href="#tipos" class="btn">🌲 Explorar contenido</a>
+        </div>
+    </section>
+
+    <!-- ===== ¿QUÉ ES LA MADERA? ===== -->
+    <section id="que-es">
+        <div class="container">
+            <h2>🌿 ¿Qué es la madera?</h2>
+            <p style="font-size:1.15rem; max-width:800px;">La madera es un material orgánico, duro y fibroso que constituye el tronco de los árboles. Se forma a partir del crecimiento del árbol mediante capas concéntricas llamadas anillos.</p>
+            <ul style="margin-top:20px; list-style:disc; padding-left:30px;">
+                <li><strong>Cómo se forma:</strong> Mediante la división celular del cambium (capa meristemática), generando xilema (duramen y albura).</li>
+                <li><strong>De dónde proviene:</strong> De bosques naturales y plantaciones forestales manejadas responsablemente.</li>
+                <li><strong>Importancia:</strong> Es renovable, captura CO₂, y es clave en la construcción, muebles, arte y más.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== TIPOS DE MADERA ===== -->
+    <section id="tipos">
+        <div class="container">
+            <h2>🪵 Tipos de madera</h2>
+            <div class="grid-maderas">
+                <!-- Ficha Roble -->
+                <div class="ficha-madera"><h4>Roble</h4><ul><li><strong>Origen:</strong> Europa, Norteamérica</li><li><strong>Color:</strong> Miel a marrón</li><li><strong>Dureza:</strong> Alta</li><li><strong>Textura:</strong> Gruesa y porosa</li><li><strong>Usos:</strong> Muebles, barricas, parquet</li><li><strong>Curiosidad:</strong> Puede vivir más de 1000 años.</li></ul></div>
+                <!-- Ficha Pino -->
+                <div class="ficha-madera"><h4>Pino</h4><ul><li><strong>Origen:</strong> Hemisferio Norte</li><li><strong>Color:</strong> Amarillo claro</li><li><strong>Dureza:</strong> Media-baja</li><li><strong>Textura:</strong> Fina y recta</li><li><strong>Usos:</strong> Construcción, muebles económicos</li><li><strong>Curiosidad:</strong> Es la madera más utilizada del mundo.</li></ul></div>
+                <!-- Ficha Cedro -->
+                <div class="ficha-madera"><h4>Cedro</h4><ul><li><strong>Origen:</strong> América, Mediterráneo</li><li><strong>Color:</strong> Rojo pardo</li><li><strong>Dureza:</strong> Media</li><li><strong>Textura:</strong> Fina y aromática</li><li><strong>Usos:</strong> Ebanistería, revestimientos</li><li><strong>Curiosidad:</strong> Su aroma repele polillas.</li></ul></div>
+                <!-- Ficha Nogal -->
+                <div class="ficha-madera"><h4>Nogal</h4><ul><li><strong>Origen:</strong> Europa, América</li><li><strong>Color:</strong> Marrón chocolate</li><li><strong>Dureza:</strong> Alta</li><li><strong>Textura:</strong> Ondulada y atractiva</li><li><strong>Usos:</strong> Muebles de lujo, culatas de armas</li><li><strong>Curiosidad:</strong> Muy apreciado en el siglo XVIII.</li></ul></div>
+                <!-- Ficha Caoba -->
+                <div class="ficha-madera"><h4>Caoba</h4><ul><li><strong>Origen:</strong> Centroamérica, Sudamérica</li><li><strong>Color:</strong> Rojo intenso</li><li><strong>Dureza:</strong> Media</li><li><strong>Textura:</strong> Fina y uniforme</li><li><strong>Usos:</strong> Muebles finos, instrumentos</li><li><strong>Curiosidad:</strong> Es la madera nacional de Belice.</li></ul></div>
+                <!-- Ficha Teca -->
+                <div class="ficha-madera"><h4>Teca</h4><ul><li><strong>Origen:</strong> Sureste Asiático</li><li><strong>Color:</strong> Dorado a marrón</li><li><strong>Dureza:</strong> Alta</li><li><strong>Textura:</strong> Gruesa y aceitosa</li><li><strong>Usos:</strong> Muebles de exterior, barcos</li><li><strong>Curiosidad:</strong> Resistente al agua y termitas.</li></ul></div>
+                <!-- Ficha Abeto -->
+                <div class="ficha-madera"><h4>Abeto</h4><ul><li><strong>Origen:</strong> Zonas frías del norte</li><li><strong>Color:</strong> Blanco-amarillento</li><li><strong>Dureza:</strong> Baja</li><li><strong>Textura:</strong> Fina y recta</li><li><strong>Usos:</strong> Papel, estructuras ligeras</li><li><strong>Curiosidad:</strong> Es el árbol de Navidad típico.</li></ul></div>
+                <!-- Ficha Eucalipto -->
+                <div class="ficha-madera"><h4>Eucalipto</h4><ul><li><strong>Origen:</strong> Australia</li><li><strong>Color:</strong> Marrón rosado</li><li><strong>Dureza:</strong> Alta</li><li><strong>Textura:</strong> Intermedia</li><li><strong>Usos:</strong> Postes, pisos, pasta de papel</li><li><strong>Curiosidad:</strong> Crece muy rápido (hasta 10 m/año).</li></ul></div>
+                <!-- Ficha Bambú -->
+                <div class="ficha-madera"><h4>Bambú</h4><ul><li><strong>Origen:</strong> Asia, América</li><li><strong>Color:</strong> Verde a marrón</li><li><strong>Dureza:</strong> Alta (en su nudo)</li><li><strong>Textura:</strong> Lisa y cilíndrica</li><li><strong>Usos:</strong> Muebles, andamios, textiles</li><li><strong>Curiosidad:</strong> No es árbol, es una gramínea.</li></ul></div>
+                <!-- Ficha Fresno -->
+                <div class="ficha-madera"><h4>Fresno</h4><ul><li><strong>Origen:</strong> Europa, Norteamérica</li><li><strong>Color:</strong> Blanco-crema</li><li><strong>Dureza:</strong> Alta</li><li><strong>Textura:</strong> Gruesa y recta</li><li><strong>Usos:</strong> Mangos de herramientas, muebles</li><li><strong>Curiosidad:</strong> Muy elástica, ideal para deportes.</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROPIEDADES ===== -->
+    <section id="propiedades">
+        <div class="container">
+            <h2>📐 Propiedades de la madera</h2>
+            <div class="grid-propiedades">
+                <span>🌲 Densidad</span><span>💧 Humedad</span><span>🔨 Resistencia</span>
+                <span>🌀 Elasticidad</span><span>⏳ Durabilidad</span><span>🎨 Color natural</span>
+                <span>〰️ Vetas</span><span>🛠️ Aplicaciones</span>
+            </div>
+            <p style="margin-top:20px; background:#ecf3ec; padding:20px; border-radius:12px;">Cada especie tiene una combinación única de estas propiedades, lo que determina su mejor uso. Por ejemplo, maderas densas como el nogal son ideales para muebles, mientras que las ligeras como el abeto se usan en estructuras.</p>
+        </div>
+    </section>
+
+    <!-- ===== USOS ===== -->
+    <section id="usos">
+        <div class="container">
+            <h2>🏗️ ¿Dónde se utiliza la madera?</h2>
+            <div class="grid-usos">
+                <div>Construcción</div><div>Viviendas</div><div>Muebles</div><div>Puertas</div>
+                <div>Pisos</div><div>Techos</div><div>Artesanías</div><div>Instrumentos musicales</div>
+                <div>Decoración</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CUIDADO ===== -->
+    <section id="cuidado">
+        <div class="container">
+            <h2>🧴 Cuidado de la madera</h2>
+            <ul class="consejos-lista">
+                <li><strong>Evitar exceso de humedad:</strong> La madera se hincha y deforma.</li>
+                <li><strong>Limpieza adecuada:</strong> Usar paño seco o ligeramente húmedo, nunca en exceso.</li>
+                <li><strong>Protección solar:</strong> Los rayos UV decoloran y agrietan la superficie.</li>
+                <li><strong>Mantenimiento preventivo:</strong> Aplicar aceite o cera natural cada cierto tiempo.</li>
+                <li><strong>Productos recomendados:</strong> Siempre optar por ceras y aceites naturales (sin marcas específicas).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== SOSTENIBILIDAD ===== -->
+    <section id="sostenibilidad">
+        <div class="container">
+            <h2>♻️ Sostenibilidad</h2>
+            <ul class="sostenibilidad-lista">
+                <li><strong>Reforestación:</strong> Plantar más árboles de los que se talan.</li>
+                <li><strong>Bosques certificados:</strong> Buscar sellos FSC o PEFC.</li>
+                <li><strong>Aprovechamiento responsable:</strong> Uso de técnicas de tala selectiva.</li>
+                <li><strong>Protección ambiental:</strong> La madera almacena CO₂ durante toda su vida útil.</li>
+                <li><strong>Economía circular:</strong> Reutilizar y reciclar la madera al final de su vida.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== CURIOSIDADES ===== -->
+    <section id="curiosidades">
+        <div class="container">
+            <h2>✨ Curiosidades</h2>
+            <div class="curiosidades-grid">
+                <div class="curiosidad-item"><h4>🌲 El árbol más alto</h4><p>La secuoya Hyperion mide 115.9 m (más que un edificio de 30 pisos).</p></div>
+                <div class="curiosidad-item"><h4>🏋️ La madera más pesada</h4><p>El palo santo (Guaiacum) es tan denso que se hunde en el agua.</p></div>
+                <div class="curiosidad-item"><h4>🕊️ La madera más ligera</h4><p>El balsa de Ecuador tiene una densidad de solo 0.12 g/cm³.</p></div>
+                <div class="curiosidad-item"><h4>⚠️ Especies protegidas</h4><p>Caoba y ébano están en CITES para evitar su extinción.</p></div>
+                <div class="curiosidad-item"><h4>⏳ Árboles centenarios</h4><p>El pino de bristlecone puede vivir más de 5,000 años.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <h2>❓ Preguntas frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item"><h4>¿Diferencia entre dura y blanda?</h4><p>No depende de la dureza física, sino de la botánica: las coníferas son blandas, las frondosas son duras.</p></div>
+                <div class="faq-item"><h4>¿Cuánto dura una madera?</h4><p>Depende de la especie y el cuidado. Puede durar décadas (interior) o siglos (como en estructuras antiguas).</p></div>
+                <div class="faq-item"><h4>¿Cuál resiste mejor la humedad?</h4><p>La teca, el ipe y la cumaru son excelentes para exteriores.</p></div>
+                <div class="faq-item"><h4>¿Cómo identificar una especie?</h4><p>Por su color, veta, olor, peso y, en laboratorio, por su anatomía microscópica.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GLOSARIO ===== -->
+    <section id="glosario">
+        <div class="container">
+            <h2>📖 Glosario</h2>
+            <div class="glosario-grid">
+                <div>Albura (parte viva)</div><div>Duramen (parte dura)</div><div>Veta (diseño de fibras)</div>
+                <div>Nudo (rama incluida)</div><div>Aserrado (corte)</div><div>Secado (reducción de humedad)</div>
+                <div>Cepillado (alisado)</div><div>Laminado (capas finas)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto">
+        <div class="container">
+            <h2>📬 Contacto</h2>
+            <p><strong>Correo:</strong> info@maderaeduca.com</p>
+            <p><strong>Formulario:</strong> Próximamente (por ahora, escríbenos al correo).</p>
+            <p><strong>Dirección:</strong> Centro de Educación Forestal, Madrid (solo oficinas).</p>
+            <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00.</p>
+            <p style="background:#e0d6c8; padding:15px; border-radius:8px; margin-top:20px;">
+                <strong>⚠️ Aviso:</strong> Este sitio es 100% informativo. No vendemos, no comercializamos, ni asesoramos profesionalmente. Toda la información es educativa.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== LEGAL ===== -->
+    <section id="legal">
+        <div class="container">
+            <h2>⚖️ Aviso legal y políticas</h2>
+            <p><strong>Política de privacidad:</strong> No recopilamos datos personales sin consentimiento. Usamos cookies solo para mejorar la navegación.</p>
+            <p><strong>Términos y condiciones:</strong> El uso de este sitio implica la aceptación de que el contenido es meramente orientativo.</p>
+            <p><strong>Política de cookies:</strong> Este sitio usa cookies técnicas. Puedes desactivarlas en tu navegador.</p>
+            <p><strong>Quiénes somos:</strong> Somos un equipo de divulgadores apasionados por la madera y su sostenibilidad.</p>
+            <p><strong>Responsable del sitio:</strong> MaderaEduca © 2025</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p style="margin-bottom:10px;">🌱 MaderaEduca - Portal 100% informativo y educativo</p>
+        <p>
+            <a href="#inicio">Inicio</a> |
+            <a href="#contacto">Contacto</a> |
+            <a href="#legal">Aviso legal</a>
+        </p>
+        <p style="margin-top:15px; font-size:0.9rem; color:#999;">Este sitio no realiza ventas ni intermediación comercial. Contenido original y con fines educativos.</p>
     </div>
-</div>
+</footer>
+
 </body>
 </html>
