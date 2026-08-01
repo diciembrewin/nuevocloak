@@ -1,80 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redireccionando...</title>
-    
-    <!-- 
-      ═══════════════════════════════════════════════════
-      GEOBLOQUEO - SOLO ARGENTINA VE CONTENIDO EN ESPAÑOL
-      ═══════════════════════════════════════════════════
-    -->
-    <script>
-    (function() {
-        // ============================================================
-        // CONFIGURACIÓN (URLs legibles y transparentes)
-        // ============================================================
-        const URL_ESPANOL = 'entra.html';   // Para Argentina 🇦🇷
-        const URL_INGLES = 'blob.html';     // Para el resto del mundo 🌍
-        const API_GEOLOCALIZACION = 'https://ipapi.co/json/';
-        
-        // ============================================================
-        // DETECTAR PAÍS Y REDIRIGIR
-        // ============================================================
-        fetch(API_GEOLOCALIZACION)
-            .then(function(respuesta) {
-                return respuesta.json();
-            })
-            .then(function(datos) {
-                // Si es Argentina, redirigir a versión en español
-                if (datos.country === 'AR') {
-                    window.location.href = URL_ESPANOL;
-                } else {
-                    // Si no, redirigir a versión en inglés
-                    window.location.href = URL_INGLES;
-                }
-            })
-            .catch(function() {
-                // Si falla la API, mostrar inglés por defecto
-                window.location.href = URL_INGLES;
-            });
-    })();
-    </script>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #f0f4f8;
-        }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .info {
-            color: #666;
-            font-size: 0.85rem;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Test Geolocalización</title>
 </head>
 <body>
-    <h2>🔄 Detectando tu ubicación...</h2>
-    <div class="loader"></div>
-    <p class="info">Serás redirigido automáticamente</p>
-    <p class="info" style="font-size: 0.75rem; color: #999;">
-        🇦🇷 Argentina → versión en español | 🌍 Otros países → versión en inglés
-    </p>
+    <h2>📍 Tu ubicación detectada</h2>
+    <div id="resultado"></div>
+    <script>
+        fetch('https://ipapi.co/json/')
+            .then(r => r.json())
+            .then(d => {
+                document.getElementById('resultado').innerHTML = `
+                    <p><strong>País:</strong> ${d.country_name} (${d.country})</p>
+                    <p><strong>Código:</strong> ${d.country_code}</p>
+                    <p><strong>IP:</strong> ${d.ip}</p>
+                    <p><strong>Ciudad:</strong> ${d.city}</p>
+                    <p><strong>ISP:</strong> ${d.org}</p>
+                `;
+            })
+            .catch(e => {
+                document.getElementById('resultado').innerHTML = `
+                    <p style="color:red;">❌ Error: ${e.message}</p>
+                    <p>Posiblemente la API está bloqueada desde tu ubicación.</p>
+                `;
+            });
+    </script>
 </body>
 </html>
